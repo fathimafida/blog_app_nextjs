@@ -1,0 +1,52 @@
+{
+  "blogs": [
+    {
+      "id": 1,
+      "title": "Flutter",
+      "description": "Flutter is a cross-platform sdk for building innovative applications.",
+      "author": "Eric Windmill"
+    },
+    {
+      "id": 2,
+      "title": "React",
+      "description": "React allows building encapsulated components that manage their own state, then compose them to make complex UIs",
+      "author": "Greg Lim"
+    },
+    {
+      "id": 3,
+      "title": "Web Development",
+      "description": "Web Development Techniques and frameworks (like Bootstrap) ensure web applications work on various devices and screen sizes.",
+      "author": "Jon Duckett"
+    },
+    {
+      "id": 4,
+      "title": "CSS",
+      "description": "CSS is a stylesheet language used for describing the look and formatting of a document written in HTML.",
+      "author": "Hakon Wium Lie"
+    },
+    {
+      "id": 5,
+      "title": "JavaScript",
+      "description": "JavaScript is a high-level, dynamic, interactive language used for creating web pages with interactive elements.",
+      "author": "Brendan Eich"
+    },
+    {
+      "id": 6,
+      "title": "Python",
+      "description": "Python is a versatile high-level programming language used for a wide range of applications.",
+      "author": "Guido  Van Rossum"
+    },
+    {
+      "id": 8,
+      "title": "JavaScript",
+      "description": "JavaScript is a high-level, dynamic, interactive language used for creating web pages with interactive elements.",
+      "author": "Brendan Eich"
+    },
+    {
+      "title": "",
+      "description": "",
+      "author": "",
+      "id": 9
+    }
+  ]
+}
