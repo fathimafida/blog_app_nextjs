@@ -2,7 +2,7 @@
   "blogs": [
     {
       "id": 1,
-      "title": "Flutter",
+      "title": "The Flutter",
       "description": "Flutter is a cross-platform sdk for building innovative applications.",
       "author": "Eric Windmill"
     },
@@ -41,12 +41,6 @@
       "title": "JavaScript",
       "description": "JavaScript is a high-level, dynamic, interactive language used for creating web pages with interactive elements.",
       "author": "Brendan Eich"
-    },
-    {
-      "title": "",
-      "description": "",
-      "author": "",
-      "id": 9
     }
   ]
 }

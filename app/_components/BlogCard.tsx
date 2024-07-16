@@ -4,7 +4,7 @@ const BlogCard = (
     {blog}: Props
 ) => {
   return (
-    <div className="flex  flex-col p-3  border rounded-2xl m-6 shadow-xl  transition-all ease duration-1000   hover:scale-125 hover:rotate-2 bg-gradient-to-tr from-blue-100 to-blue-400   ">
+    <div className="flex  flex-col p-3  border rounded-2xl m-6 shadow-xl  transition-all ease duration-1000   hover:scale-125 hover:rotate-2 bg-gradient-to-tr from-blue-950 to-blue-500   ">
       <div className="flex justify-between items-center">
         <h2 className=" text-3xl font-bold font-serif mb-2">{blog.title}</h2>
       </div>
