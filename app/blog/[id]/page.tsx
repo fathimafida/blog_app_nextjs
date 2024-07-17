@@ -14,7 +14,9 @@ const BlogDetailPage = async({
 }: Props) => {
     const blog : Blog = await fetch(`http://localhost:3001/blogs/${params.id}`).then(res => res.json())
   return (
-      <div
+    <div className='flex flex-col'>
+        <h1 className='text-2xl text-black'>Blog Details</h1>
+       <div
           key={blog.id}
       className="flex  flex-col p-3  border rounded-2xl m-6 shadow-xl      ">
       
@@ -29,6 +31,7 @@ const BlogDetailPage = async({
 
    
         </div>
+     </div>
   )
 }
 

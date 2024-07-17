@@ -6,7 +6,8 @@ import { FaEdit } from 'react-icons/fa'
 import { MdDelete } from 'react-icons/md'
 
 const BlogCard = (
-    {blog}: Props
+  { blog }: Props
+  
 ) => {
   return (
     <div className="flex  flex-col p-3  border rounded-2xl m-6 shadow-xl   ">
@@ -17,9 +18,10 @@ const BlogCard = (
       <p className="text-md font-serif  text-black">{blog.description}</p>
 
       <p className="text-lg font-serif  text-black font-semibold ">Author:{blog.author}</p>
-        <div
+      
+      <div
           className='flex gap-2 justify-end'>
-          <Link href={`/edit`} >
+          <Link href={`/edit/${blog.id}`} >
             <button className=' flex  items-center gap-2 w-fit text-xl  text-yellow-500 border-yellow-600 p-1 border rounded'>
             <FaEdit />
           </button>
@@ -35,11 +37,12 @@ const BlogCard = (
                     method: "DELETE",
                   
                   })
-              // alert("Blog deleted successfully")
+              
               await fetch("http://localhost:3001/blogs")
+              alert("Blog deleted successfully")
               
             } catch (error) {
-            alert("Cannot delete blog")
+            alert("Cannot delete blog") 
             }
           }}
           className=' flex  items-center gap-2 w-fit text-red-500  text-xl border p-1 border-red-600 rounded'>

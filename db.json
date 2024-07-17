@@ -1,24 +1,6 @@
 {
   "blogs": [
     {
-      "id": 1,
-      "title": "The Flutter",
-      "description": "Flutter is a cross-platform sdk for building innovative applications.",
-      "author": "Eric Windmill"
-    },
-    {
-      "id": 2,
-      "title": "React",
-      "description": "React allows building encapsulated components that manage their own state, then compose them to make complex UIs",
-      "author": "Greg Lim"
-    },
-    {
-      "id": 4,
-      "title": "CSS",
-      "description": "CSS is a stylesheet language used for describing the look and formatting of a document written in HTML.",
-      "author": "Hakon Wium Lie"
-    },
-    {
       "id": 5,
       "title": "JavaScript",
       "description": "JavaScript is a high-level, dynamic, interactive language used for creating web pages with interactive elements.",
@@ -37,101 +19,26 @@
       "author": "Brendan Eich"
     },
     {
-      "id": 9
-    },
-    {
-      "id": 10
-    },
-    {
-      "id": 11
-    },
-    {
-      "id": 12
-    },
-    {
-      "id": 13
-    },
-    {
-      "title": "ssdsdc",
-      "description": "sdsd",
-      "author": "dded",
-      "id": 14
-    },
-    {
-      "title": "skdmclskmcd",
-      "description": "smdlsmdls.",
-      "author": "samdlsmlskner",
-      "id": 15
-    },
-    {
-      "title": "asmdls d",
-      "description": "s csldc sld",
-      "author": "a,s clsd csld",
-      "id": 16
-    },
-    {
-      "title": "smdcks",
-      "description": "s dks",
+      "title": "hennnnaa",
+      "description": "Sherin",
       "author": "smdskd",
       "id": 17
     },
     {
-      "title": "smdcks",
-      "description": "s dks",
-      "author": "smdskd",
-      "id": 18
-    },
-    {
-      "title": "smdcks",
-      "description": "s dks",
-      "author": "smdskd",
-      "id": 19
-    },
-    {
-      "title": "smdcks",
-      "description": "s dks",
-      "author": "smdskd",
-      "id": 20
-    },
-    {
-      "title": "smdcks",
-      "description": "s dks",
-      "author": "smdskd",
-      "id": 21
-    },
-    {
-      "title": "aaaaaaaaaaaaaaaa",
-      "description": "aaaaaaaaaaaaaa",
-      "author": "aaaaaaaaaaaa",
-      "id": 22
-    },
-    {
-      "title": "sd nsd ",
-      "description": "sdcsdcd",
-      "author": "sdsdd",
-      "id": 23
-    },
-    {
-      "title": "zdcdsc",
-      "description": "sdcdc",
-      "author": "ccvcfv",
+      "title": "Fida",
+      "description": "mdskdsd",
+      "author": "sdm smdf",
       "id": 25
     },
     {
-      "title": "zdcdsc",
-      "description": "sdcdc",
+      "title": "hellloooo",
+      "description": "world",
       "author": "ccvcfv",
       "id": 27
     },
     {
-      "title": "zdcdsc",
-      "description": "sdcdc",
-      "author": "ccvcfv",
-      "id": 28
-    },
-    {
-      "title": "axsdc",
-      "description": "ssmdc sdm",
+      "title": "hiiiiiiiiiii",
+      "description": "hellooo",
       "author": "as ss dc",
       "id": 33
     }
