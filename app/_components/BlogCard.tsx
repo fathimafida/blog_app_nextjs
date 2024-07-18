@@ -1,14 +1,30 @@
 
 "use client"
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 import { FaEdit } from 'react-icons/fa'
 import { MdDelete } from 'react-icons/md'
+import {  useRouter } from 'next/navigation';
+import { Alert, Snackbar } from '@mui/material'
+import { CgSpinner } from 'react-icons/cg'
 
 const BlogCard = (
   { blog }: Props
   
 ) => {
+  const router = useRouter();
+  const [snackbarMessage, setSnackbarMessage] = useState('');
+  // const [snackbarMessageError, setsnackbarMessageError] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [open, setOpen] = useState(false);
+  // const [isOpen, setIsOpen] = useState(false);
+  
+  const handleClose = async () => {
+    setOpen(false)
+  }
+  // const handleDeleteClose = async () => {
+  //   setIsOpen(false)
+  // }
   return (
     <div className="flex  flex-col p-3  border rounded-2xl m-6 shadow-xl   ">
       <div className="flex justify-between items-center text-black">
@@ -26,31 +42,61 @@ const BlogCard = (
             <FaEdit />
           </button>
         </Link>
-          
+        {
+          loading ? <div className='flex justify-center flex-row' >
+            <CgSpinner color="blue" className='w-6 h-6 text-2xl  animate-spin ' /> </div> :
         <button
           onClick={async (e) => {
-            // alert("Are you sure you want to delete this blog?")
+        
             e.preventDefault();
             try {
-
+             setLoading(true);
                   await fetch(`http://localhost:3001/blogs/${blog.id}`, {
                     method: "DELETE",
                   
                   })
-              
+              setLoading(false)
+               setSnackbarMessage('Blog deleted successfully');
+              setOpen(true);
               await fetch("http://localhost:3001/blogs")
-              alert("Blog deleted successfully")
+             
+              router.refresh();
+        
               
             } catch (error) {
-            alert("Cannot delete blog") 
+              setsnackbarMessageError(error.message);
+              setLoading(false);
             }
           }}
           className=' flex  items-center gap-2 w-fit text-red-500  text-xl border p-1 border-red-600 rounded'>
           <MdDelete />
           
-        </button></div>
-
-        </div>
+        </button>
+           }
+      
+      </div>
+      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+        <Alert
+          onClose={handleClose}
+          severity="success"
+          variant="filled"
+          sx={{ width: '100%' }}
+        >
+          {snackbarMessage}
+        </Alert>
+      </Snackbar>
+         {/* <Snackbar open={isOpen} autoHideDuration={6000} onClose={handleDeleteClose}>
+        <Alert
+          onClose={handleDeleteClose}
+          severity="error"
+          variant="filled"
+          sx={{ width: '100%' }}
+        >
+          {snackbarMessageError}
+        </Alert>
+      </Snackbar> */}
+     </div>
+        
   )
 }
 

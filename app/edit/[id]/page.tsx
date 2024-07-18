@@ -4,11 +4,14 @@
 
 import {  useRouter } from 'next/navigation';
 import { CgSpinner } from 'react-icons/cg';
+import { Alert, Snackbar } from '@mui/material';
  
  const EditBlogPage = ({ params }) => {
    const [error, setError] = useState(null);
    const [loading, setLoading] = useState(false);
    const router = useRouter();
+   const [snackbarMessage, setSnackbarMessage] = useState('');
+   const [open, setOpen] = useState(false);
    const [blog, setBlog] = useState({
      title: "",
      description: "",
@@ -57,8 +60,12 @@ import { CgSpinner } from 'react-icons/cg';
        }
  
        setLoading(false);
-      await fetch("http://localhost:3001/blogs/",)
-       await router.push("/");
+       await fetch("http://localhost:3001/blogs/",)
+       setSnackbarMessage('Blog updated successfully');
+       setOpen(true);
+    
+        router.push("/");
+         router.refresh();
     
      } catch (error) {
        setError(error.message);
@@ -66,6 +73,9 @@ import { CgSpinner } from 'react-icons/cg';
      }
    };
  
+   const handleClose = () => {
+     setOpen(false);
+   }
    return (
      <div className='flex flex-col justify-center items-center p-2'>
        <h1 className='text-lg mb-5 font-bold text-slate-900'>Edit blog post</h1>
@@ -98,7 +108,9 @@ import { CgSpinner } from 'react-icons/cg';
            type='text'
            placeholder='Author Name'
          />
-         {loading ? <CgSpinner color="blue" className='w-6 h-6 text-2xl align-middle animate-spin items-center'/>:<button
+         {loading ? <div className='flex justify-center flex-row'>
+           <CgSpinner color="blue" className='w-6 h-6 text-2xl align-middle animate-spin items-center'/>
+         </div>:<button
            type='submit'
            className='bg-blue-500 text-white rounded-md p-2 w-full transition-all hover:bg-blue-600'
          >
@@ -106,7 +118,16 @@ import { CgSpinner } from 'react-icons/cg';
          </button>
          }
        </form>
-     
+      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+        <Alert
+          onClose={handleClose}
+          severity="success"
+          variant="filled"
+          sx={{ width: '100%' }}
+        >
+          {snackbarMessage}
+        </Alert>
+      </Snackbar>
      </div>
    );
  };

@@ -1,14 +1,18 @@
 
 "use client";
 
+import { Alert, Snackbar } from "@mui/material";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { CgSpinner } from "react-icons/cg";
 
-const AddBlogPage = ({blog}) => {
+const AddBlogPage = () => {
   const router = useRouter(); 
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState('');
+    const [open, setOpen] = useState(false);
+
 
   const handleSubmit = async (e) => {
     
@@ -29,7 +33,10 @@ const AddBlogPage = ({blog}) => {
       });
 
       setLoading(false);
-      await router.push("/");
+       setSnackbarMessage('Blog Added successfully');
+      setOpen(true);
+ router.push("/");
+         router.refresh();
     } catch (error) {
       setError(error.message);
       setLoading(false);
@@ -37,6 +44,11 @@ const AddBlogPage = ({blog}) => {
   };
 
   
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <div
       className='flex flex-col justify-center items-center p-2'
@@ -72,7 +84,9 @@ const AddBlogPage = ({blog}) => {
           type="text"
           placeholder='Author Name'
         />
-        {loading ? <CgSpinner color="blue" className='w-6 h-6 text-2xl  animate-spin items-center'/>:<button
+        {loading ?<div className='flex justify-center flex-row'>
+           <CgSpinner color="blue" className='w-6 h-6 text-2xl align-middle animate-spin items-center'/>
+         </div>:<button
           type='submit'
           className='bg-blue-500 text-white rounded-md p-2 w-full transition-all hover:bg-blue-600'
         >
@@ -81,6 +95,16 @@ const AddBlogPage = ({blog}) => {
         }
         
       </form>
+       <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+        <Alert
+          onClose={handleClose}
+          severity="success"
+          variant="filled"
+          sx={{ width: '100%' }}
+        >
+          {snackbarMessage}
+        </Alert>
+      </Snackbar>
     </div>
   );
 };
